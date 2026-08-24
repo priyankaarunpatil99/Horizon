@@ -1,7 +1,6 @@
 *.iml
 .gradle
 /local.properties
-/.idea/caches
 /.idea/libraries
 /.idea/modules.xml
 /.idea/workspace.xml
@@ -13,11 +12,3 @@
 .externalNativeBuild
 .cxx
 local.properties
-
-app/
-build.gradle.kts
- gradle.properties
-        gradle/
-        gradlew
-        gradlew.bat
-        settings.gradle.kts

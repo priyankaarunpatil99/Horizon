@@ -9,7 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
-import com.example.horizontravelplannerwithai.navigation.NavGraph
+import com.example.horizontravelplannerwithai.navigation.HorizonNavGraph
 import com.example.horizontravelplannerwithai.ui.theme.HorizonTravelPlannerWithAITheme
 
 class MainActivity : ComponentActivity() {
@@ -18,10 +18,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             HorizonTravelPlannerWithAITheme {
-                val navController = rememberNavController()
-                NavGraph(
-                            navController = navController
-                )
+                HorizonNavGraph()
             }
         }
     }

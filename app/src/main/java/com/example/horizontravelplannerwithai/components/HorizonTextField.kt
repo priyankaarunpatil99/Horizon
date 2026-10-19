@@ -1,4 +1,4 @@
-package com.example.horizontravelplannerwithai.presentation.components
+package com.example.horizontravelplannerwithai.components
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.OutlinedTextField
@@ -15,9 +15,7 @@ fun HorizonTextField(
     OutlinedTextField(
         value = value,
         onValueChange = onValueChange,
-        label = {
-            Text(label)
-        },
+        label = { Text(label) },
         modifier = Modifier.fillMaxWidth()
     )
 }

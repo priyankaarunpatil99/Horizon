@@ -87,28 +87,24 @@ fun SavedTripDetailScreen(
                 modifier = Modifier.height(16.dp)
             )
 
-            ElevatedCard(
+            OutlinedCard(
                 modifier = Modifier.fillMaxWidth()
             ) {
 
                 Column(
                     modifier = Modifier.padding(16.dp)
                 ) {
-
-                    Text("Day 1 • Beach Visit")
-
+                    Text("🌴 Day 1 • Beach Visit")
                     Spacer(
                         modifier = Modifier.height(8.dp)
                     )
 
-                    Text("Day 2 • Water Sports")
-
+                    Text("🏄 Day 2 • Water Sports")
                     Spacer(
                         modifier = Modifier.height(8.dp)
                     )
 
-                    Text("Day 3 • Local Market")
-
+                    Text("🛍️ Day 3 • Local Market")
                     Spacer(
                         modifier = Modifier.height(8.dp)
                     )

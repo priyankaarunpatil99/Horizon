@@ -6,6 +6,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.horizontravelplannerwithai.components.BottomBar
 import com.example.horizontravelplannerwithai.presentation.screens.*
@@ -27,17 +28,56 @@ fun HorizonNavGraph() {
         mutableStateOf("")
     }
 
+    val navBackStackEntry by navController.currentBackStackEntryAsState()
+
+    val currentRoute =
+        navBackStackEntry?.destination?.route
+
+    val showBottomBar = currentRoute in listOf(
+        Routes.PLAN_TRIP,
+        Routes.SAVED_TRIPS,
+        Routes.PROFILE
+    )
+
+
+
+
     Scaffold(
         bottomBar = {
-            BottomBar(navController)
+
+            if (showBottomBar) {
+
+                BottomBar(navController)
+            }
         }
     ) { paddingValues ->
 
         NavHost(
             navController = navController,
-            startDestination = Routes.PLAN_TRIP,
+            startDestination = Routes.SPLASH,
             modifier = Modifier.padding(paddingValues)
         ) {
+            composable(
+                Routes.SPLASH
+            ) {
+
+                SplashScreen(
+
+                    onSplashFinished = {
+
+                        navController.navigate(
+                            Routes.PLAN_TRIP
+                        ) {
+
+                            popUpTo(
+                                Routes.SPLASH
+                            ) {
+                                inclusive = true
+                            }
+                        }
+                    }
+                )
+            }
 
             // Plan Trip
 

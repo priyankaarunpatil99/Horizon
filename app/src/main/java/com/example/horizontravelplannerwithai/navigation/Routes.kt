@@ -6,6 +6,7 @@ object Routes {
     const val BUDGET_SUMMARY = "budget_summary"
     const val SAVED_TRIPS = "saved_trips"
     const val PROFILE = "profile"
+    const val SPLASH = "splash"
 
     const val SAVED_TRIP_DETAIL =
         "saved_trip_detail/{city}/{country}/{budget}"
